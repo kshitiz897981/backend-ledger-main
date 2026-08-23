@@ -27,6 +27,8 @@ const transactionSchema = new Schema({
         required: [ true, "Amount is required for creating a transaction" ],
         min: [ 0, "Transaction amount cannot be negative" ]
     },
+    //An idempotency key is used to make sure that the same API request doesn't accidentally perform the same
+    //  operation multiple times.
     idempotencyKey: {
         type: String,
         required: [ true, "Idempotency Key is required for creating a transaction" ],

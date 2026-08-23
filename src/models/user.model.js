@@ -21,6 +21,7 @@ const userSchema = new Schema({
         minlength: [ 6, "password should contain more than 6 character" ],
         select: false //password will not be sent in any query related to user data
     },
+    //by default it is false , means only preson who has database access can make a systemUser for initial money fund
     systemUser: {
         type: Boolean,
         default: false,
